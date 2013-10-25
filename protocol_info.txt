@@ -1,0 +1,47 @@
+INFO:
+All mesages in JSON format over one TCP connection.
+For example:
+Client:
+{
+    'code': 22,
+}
+Server:
+{
+    'code': 17,
+    'message':'',
+    'ships': [(1,2), (1,3)],
+}
+
+For example:
+Client:
+{
+    'code': 21,
+    'ships': [(1,2), (1,3)],
+}
+Server:
+{
+    'code': 11,
+}
+
+MESSAGES:
+
+FROM SERVER:
+11: OK
+12: ERROR
+13: Not your step!
+14: We have a winner!
+15: MESSAGE
+16: LOSE SHIP
+17: YOUR SHIPS
+18: START GAME
+19: STOP GAME
+20: NICE STEP 
+21: BAD STEP
+22: CREATE GAME
+
+FROM CLIENT
+21: ADD (BUY) SHIP (Expected array 'ships')
+22: RESEND MY SHIPS
+23: START GAME
+24: STOP GAME
+25: STEP (Players step)
